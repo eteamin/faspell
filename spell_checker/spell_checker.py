@@ -15,7 +15,7 @@ class SpellChecker(object):
         self.NWORDS = self.train(self.words(self.data_base_file))
 
     def words(self, text):
-        return re.findacd ll('[ا-ی]+', text)
+        return re.findall('[ا-ی]+', text)
 
     def train(self, features):
         model = collections.defaultdict(lambda: 1)
