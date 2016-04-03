@@ -5,15 +5,18 @@ import collections
 from os import path
 import spell_checker
 
+
 __author__ = 'amin'
 
 
 class SpellChecker(object):
+    # region = make_region().configure('dogpile.cache.pylimbc')
 
     def __init__(self, database_file):
         self.data_base_file = database_file
         self.NWORDS = self.train(self.words(self.data_base_file))
 
+    # @region.cache_on_arguments()
     def words(self, text):
         return re.findall('[ا-ی]+', text)
 
@@ -52,7 +55,6 @@ class SpellChecker(object):
             return []
         else:
             return self.dictionary_maker(word, candidates)
-
 
     @staticmethod
     def dictionary_maker(word, candidates):

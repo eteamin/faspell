@@ -18,7 +18,9 @@ packages = [
     'spell_checker'
 ]
 
-requires = []
+requires = [
+    'dogpile.cache'
+]
 
 test_requirements = []
 setup(
