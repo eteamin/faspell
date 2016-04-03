@@ -15,19 +15,19 @@ except ImportError:
     from setuptools import setup, find_packages
 
 packages = [
-    'persian_spell_checker'
+    'spell_checker'
 ]
 
 requires = []
 
 test_requirements = []
 setup(
-    name='persian_spell_checker',
-    version='0.9.6',
+    name='spell_checker',
+    version='0.9.9',
     description='Persian Spell_Checker in Python',
     author='eteamin',
     author_email='aminetesamian1371@gmail.com',
-    url='https://github.com/eteamin/persian_spell_checker',
+    url='https://github.com/eteamin/spell_checker',
     packages=packages,
     install_requires=requires,
     include_package_data=True,
