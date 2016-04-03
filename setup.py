@@ -18,14 +18,12 @@ packages = [
     'spell_checker'
 ]
 
-requires = [
-    'dogpile.cache'
-]
+requires = []
 
 test_requirements = []
 setup(
-    name='spell_checker',
-    version='0.1.0',
+    name='farsi_spell_checker',
+    version='0.0.1a',
     description='Persian Spell_Checker in Python',
     author='eteamin',
     author_email='aminetesamian1371@gmail.com',

@@ -10,7 +10,6 @@ __author__ = 'amin'
 
 
 class SpellChecker(object):
-    # region = make_region().configure('dogpile.cache.pylimbc')
 
     def __init__(self, database_file):
         self.data_base_file = database_file
