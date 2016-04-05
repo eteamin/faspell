@@ -15,19 +15,19 @@ except ImportError:
     from setuptools import setup, find_packages
 
 packages = [
-    'spell_checker'
+    'faspell'
 ]
 
 requires = []
 
 test_requirements = []
 setup(
-    name='farsi_spell_checker',
-    version='0.0.1a',
+    name='faspell',
+    version='0.0.4',
     description='Persian Spell_Checker in Python',
     author='eteamin',
     author_email='aminetesamian1371@gmail.com',
-    url='https://github.com/eteamin/spell_checker',
+    url='https://github.com/eteamin/faspell',
     packages=packages,
     install_requires=requires,
     include_package_data=True,
