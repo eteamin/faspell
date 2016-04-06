@@ -23,7 +23,7 @@ requires = []
 test_requirements = []
 setup(
     name='faspell',
-    version='0.0.4',
+    version='0.0.7',
     description='Persian Spell_Checker in Python',
     author='eteamin',
     author_email='aminetesamian1371@gmail.com',

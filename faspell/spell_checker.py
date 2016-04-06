@@ -19,13 +19,19 @@ class SpellChecker(object):
 
     def known(self, words): return set(w for w in words if w in self.NWORDS)
 
+    def normalize(self, word):
+        if '؟' in word:
+            normalized = word.replace('؟', '')
+            return normalized
+        return word
+
     def correct(self, word):
-        candidates = list(self.known([word])) or \
-                     list(self.known(self.first_edit(word)))
+        normalized = self.normalize(word)
+        candidates = list(self.known([normalized])) or list(self.known(self.first_edit((normalized))))
 
         if candidates == []:
-            return self.dictionary_maker(word, candidates)
-        elif candidates[0] == word and len(candidates) == 1:
+            return self.dictionary_maker(normalized, candidates)
+        elif candidates[0] == normalized and len(candidates) == 1:
             return []
         else:
             return self.dictionary_maker(word, candidates)
@@ -35,10 +41,25 @@ class SpellChecker(object):
         suggestion = []
         for item in candidates:
             suggestion.append(item)
-        suggestion.sort()
         return [{
             'word': word,
             'ud': False,
             'suggestions': suggestion
         }]
+
+
+if __name__ == '__main__':
+
+    def words(database):
+        return re.split('\n', database)
+
+    def train(features):
+        model = dict.fromkeys(features, 1)
+        return model
+
+
+    with open('dictionary', 'r') as my_dictionary:
+        check_spelling = SpellChecker(train(words(my_dictionary.read())))
+        check_spelling.correct('سلام؟')
+
 
