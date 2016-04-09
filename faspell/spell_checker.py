@@ -41,6 +41,7 @@ class SpellChecker(object):
         suggestion = []
         for item in candidates:
             suggestion.append(item)
+        suggestion.sort()
         return [{
             'word': word,
             'ud': False,
@@ -60,6 +61,6 @@ if __name__ == '__main__':
 
     with open('dictionary', 'r') as my_dictionary:
         check_spelling = SpellChecker(train(words(my_dictionary.read())))
-        check_spelling.correct('سلام؟')
+        print(check_spelling.correct(''))
 
 
